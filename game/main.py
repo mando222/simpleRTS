@@ -1,3 +1,13 @@
+import sys
+import os
+
+# Get the absolute path of the directory containing main.py (game/)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Get the absolute path of the project root directory (one level up from game/)
+project_root = os.path.dirname(current_dir)
+# Add the project root to sys.path
+sys.path.insert(0, project_root)
+
 import pygame
 from ecs.entity import Entity # Though we might not directly use Entity if we use specialized classes
 from ecs.components import (
